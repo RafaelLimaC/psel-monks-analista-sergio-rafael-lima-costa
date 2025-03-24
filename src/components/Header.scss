@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #994c4c;
+}
+
+.header-wrapper {
+  max-width: 75.375rem;
+  width: 100%;
+
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  .header-logo {
+    height: 60px;
+    cursor: pointer;
+  }
+}
