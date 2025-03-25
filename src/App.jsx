@@ -2,7 +2,7 @@ import { useState } from "react";
 import scroll from "./assets/scroll.svg";
 import Header from "./components/Header";
 import Products from "./components/Products";
-import Application from "./components/Application";
+import AppSection from "./components/AppSection/AppSection";
 import Gallery from "./components/Gallery";
 import Tags from "./components/Tags";
 import Cards from "./components/Cards";
@@ -39,7 +39,7 @@ function App() {
       <main>
         <Products />
         <Gallery />
-        <Application />
+        <AppSection />
         <Tags />
         <Cards />
       </main>

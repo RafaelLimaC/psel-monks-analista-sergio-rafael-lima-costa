@@ -138,10 +138,13 @@ table {
   --color-secondary-700: #3c0c60;
   --color-secondary-500: #7d26c9;
   --color-secondary-300: #dfbbfe;
+
+  --ff-handvetica-neue: "Handvetica-Neue", sans-serif;
+  --ff-inter: "Inter", sans-serif;
 }
 
 body {
-  font-family: "Handvetica-Neue", sans-serif;
+  font-family: var(--ff-handvetica-neue);
   background-color: var(--color-primary-200);
   color: var(--color-primary-800);
 }

@@ -15,6 +15,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: 1.5rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
 
       &:nth-child(2) {
         grid-area: 2 / 2 / 3 / 3;
@@ -54,6 +55,7 @@
       width: 100%;
       object-fit: cover;
       border-radius: 1.5rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
     }
   }
 }
