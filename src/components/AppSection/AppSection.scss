@@ -8,9 +8,10 @@
 .application-wrapper {
   border-radius: 1.5rem;
   background-color: var(--color-secondary-700);
-  padding: 2.5rem;
+  padding: 1.5rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 2.5rem;
 }
@@ -23,11 +24,11 @@
   color: var(--color-primary-200);
 
   h3 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 200;
   }
 }
@@ -37,4 +38,33 @@
   gap: 0.5rem;
   flex-direction: column;
   cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .application-wrapper {
+    flex-direction: row;
+    padding: 2.5rem;
+  }
+
+  .application-title {
+    gap: 0.5rem;
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .application-images {
+    img {
+      width: 216px;
+    }
+  }
 }

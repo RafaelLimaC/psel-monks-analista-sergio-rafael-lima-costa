@@ -15,8 +15,8 @@ function AppSection() {
           </p>
         </div>
         <div className="application-images">
-          <img src={appStore} alt="" />
-          <img src={googlePlay} alt="" />
+          <img src={appStore} alt="Download disponível na Apple Store" />
+          <img src={googlePlay} alt="Download disponível na Play Store" />
         </div>
       </div>
     </section>

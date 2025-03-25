@@ -1,0 +1,43 @@
+.products-card-item {
+  background-color: var(--color-primary-100);
+  border-radius: 0.5rem;
+  padding: 0.375rem;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  &__text {
+    padding: 0.5rem;
+    color: var(--color-primary-900);
+
+    h5 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .products-card-item {
+    &__text {
+      h5 {
+        line-height: 1.25;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

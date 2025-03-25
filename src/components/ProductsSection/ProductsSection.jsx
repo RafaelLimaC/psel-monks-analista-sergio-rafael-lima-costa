@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductsSection.scss";
-import cardPicture from "../../assets/temp/card-image.png";
+import ProductCard from "./ProductCard";
 
 function Products() {
   return (
@@ -13,39 +13,11 @@ function Products() {
         </p>
       </div>
 
-      <div className="products-card">
-        <div className="products-card-item">
-          {/* TODO - remover infos chumbadas e pegar pela API */}
-          <img src={cardPicture} alt="" />
-          <div className="products-card-item__text">
-            <h5>Lorem ipsum dolor</h5>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
-        <div className="products-card-item">
-          {/* TODO - remover infos chumbadas e pegar pela API */}
-          <img src={cardPicture} alt="" />
-          <div className="products-card-item__text">
-            <h5>Lorem ipsum dolor</h5>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
-        <div className="products-card-item">
-          {/* TODO - remover infos chumbadas e pegar pela API */}
-          <img src={cardPicture} alt="" />
-          <div className="products-card-item__text">
-            <h5>Lorem ipsum dolor</h5>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
-        <div className="products-card-item">
-          {/* TODO - remover infos chumbadas e pegar pela API */}
-          <img src={cardPicture} alt="" />
-          <div className="products-card-item__text">
-            <h5>Lorem ipsum dolor</h5>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
+      <div className="products-cards">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </div>
     </div>
   );
