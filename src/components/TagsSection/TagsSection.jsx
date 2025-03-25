@@ -1,26 +1,31 @@
 import React from "react";
 import "./TagsSection.scss";
+import TagItem from "./TagItem";
 
 function Tags() {
   return (
     <section className="tags">
       <h3 className="tags-title">Lorem ipsum dolor sit amet consectetur</h3>
       <ul className="tags-content">
-        <li>Perfumaria</li>
-        <li>Corpo e banho</li>
-        <li>Hidratante</li>
-        <li>Desodorante</li>
-        <li>Cabelos</li>
-        <li>Maquiagem</li>
-        <li>Rosto</li>
-        <li>Casa</li>
-        <li>Infantil</li>
-        <li>Shampoo</li>
-        <li>Sabonete</li>
-        <li>Body splash</li>
-        <li>Óleo corporal</li>
-        <li>Corretivo</li>
-        <li>Proteção solar</li>
+        {/* {items.map((item) => ( 
+          <TagItem key={item.id} name={item.name} />
+        )} */}
+
+        <TagItem name="Perfumaria" />
+        <TagItem name="Corpo e banho" />
+        <TagItem name="Hidratante" />
+        <TagItem name="Desodorante" />
+        <TagItem name="Cabelos" />
+        <TagItem name="Maquiagem" />
+        <TagItem name="Rosto" />
+        <TagItem name="Casa" />
+        <TagItem name="Infantil" />
+        <TagItem name="Shampoo" />
+        <TagItem name="Sabonete" />
+        <TagItem name="Body splash" />
+        <TagItem name="Óleo corporal" />
+        <TagItem name="Corretivo" />
+        <TagItem name="Proteção solar" />
       </ul>
     </section>
   );
