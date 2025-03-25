@@ -3,6 +3,8 @@
   color: var(--color-primary-200);
   position: relative;
   border-radius: 0 0 2rem 2rem;
+  overflow: hidden;
+  padding: 0 1rem;
 
   &-content {
     max-width: 75.375rem; //1206px
@@ -51,4 +53,13 @@
     max-width: 50ch;
     line-height: 1.25;
   }
+}
+
+main {
+  padding: 0 1rem;
+}
+
+.footer {
+  padding: 0 1rem;
+  background-color: var(--color-primary-800);
 }

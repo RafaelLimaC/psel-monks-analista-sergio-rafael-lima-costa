@@ -2,7 +2,11 @@ import { useState } from "react";
 import scroll from "./assets/scroll.svg";
 import Header from "./components/Header";
 import Products from "./components/Products";
+import Application from "./components/Application";
 import Gallery from "./components/Gallery";
+import Tags from "./components/Tags";
+import Cards from "./components/Cards";
+import Contact from "./components/Contact";
 import backgroundImage from "./assets/background-image.svg";
 import "./App.scss";
 
@@ -32,8 +36,16 @@ function App() {
           </div>
         </div>
       </div>
-      <Products />
-      <Gallery />
+      <main>
+        <Products />
+        <Gallery />
+        <Application />
+        <Tags />
+        <Cards />
+      </main>
+      <div className="footer">
+        <Contact />
+      </div>
 
       <h1>Vite + React</h1>
       <div className="card">
