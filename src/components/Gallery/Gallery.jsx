@@ -1,7 +1,7 @@
 import React from "react";
 import "./Gallery.scss";
-import cardPicture from "../assets/temp/card-image.png";
-import bigImage from "../assets/temp/big-image.png";
+import cardPicture from "../../assets/temp/card-image.png";
+import bigImage from "../../assets/temp/big-image.png";
 
 function Gallery() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Cards.scss";
+import "./CardsSection.scss";
 
-function Cards() {
+function CardsSection() {
   return (
     <section className="cards">
       <div className="card-item">
@@ -32,4 +32,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default CardsSection;

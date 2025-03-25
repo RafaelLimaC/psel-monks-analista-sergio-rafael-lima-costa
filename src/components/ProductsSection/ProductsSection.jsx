@@ -1,6 +1,6 @@
 import React from "react";
-import "./Products.scss";
-import cardPicture from "../assets/temp/card-image.png";
+import "./ProductsSection.scss";
+import cardPicture from "../../assets/temp/card-image.png";
 
 function Products() {
   return (

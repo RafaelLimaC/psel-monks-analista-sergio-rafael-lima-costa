@@ -1,4 +1,4 @@
-import contactImage from "../assets/contact-image.svg";
+import contactImage from "../../assets/contact-image.svg";
 import "./Contact.scss";
 
 function Contact() {

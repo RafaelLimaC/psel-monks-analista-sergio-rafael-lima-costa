@@ -2,7 +2,7 @@ import "./AppSection.scss";
 import appStore from "../../assets/app-store.svg";
 import googlePlay from "../../assets/google-play.svg";
 
-function Application() {
+function AppSection() {
   return (
     <section className="application">
       <div className="application-wrapper">
@@ -23,4 +23,4 @@ function Application() {
   );
 }
 
-export default Application;
+export default AppSection;

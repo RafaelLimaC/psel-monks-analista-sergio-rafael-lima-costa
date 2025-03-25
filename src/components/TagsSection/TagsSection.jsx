@@ -1,5 +1,5 @@
 import React from "react";
-import "./Tags.scss";
+import "./TagsSection.scss";
 
 function Tags() {
   return (
