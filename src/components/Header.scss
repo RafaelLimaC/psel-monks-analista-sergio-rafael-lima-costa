@@ -1,23 +1,40 @@
 header {
   display: flex;
   justify-content: center;
-  background-color: #994c4c;
+  padding: 0 1rem;
 }
 
 .header-wrapper {
   max-width: 75.375rem;
   width: 100%;
-
-  padding: 1rem;
+  padding: 1.5rem 0;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  position: relative;
+  gap: 3rem;
 
   .header-logo {
-    height: 60px;
+    height: 1.5rem;
     cursor: pointer;
+  }
+}
+
+.header-nav {
+  &-list {
+    display: flex;
+    gap: 3rem;
+
+    &-item {
+      font-size: 1.125rem;
+      cursor: pointer;
+
+      a {
+        font-weight: 200;
+        font-size: 1.25rem;
+        color: var(--color-primary-200);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+    }
   }
 }

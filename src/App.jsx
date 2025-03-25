@@ -1,7 +1,9 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import scroll from "./assets/scroll.svg";
 import Header from "./components/Header";
+import Products from "./components/Products";
+import Gallery from "./components/Gallery";
+import backgroundImage from "./assets/background-image.svg";
 import "./App.scss";
 
 function App() {
@@ -9,15 +11,30 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="hero">
+        <Header />
+        <div className="hero-content">
+          <div className="hero-content__text">
+            <h1>Lorem ipsum dolor sit amet consectetur</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Semper orci adipiscing
+              faucibus sit scelerisque quis commodo aenean viverra
+            </p>
+          </div>
+          <img
+            decoding="async"
+            className="hero-content__image"
+            src={backgroundImage}
+            alt="Media Monks"
+          />
+          <div className="hero-content__detail">
+            <img src={scroll} alt="Role para baixo" />
+          </div>
+        </div>
       </div>
+      <Products />
+      <Gallery />
+
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
