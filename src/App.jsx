@@ -6,6 +6,7 @@ import Gallery from "./components/Gallery/Gallery";
 import TagsSection from "./components/TagsSection/TagsSection";
 import CardsSection from "./components/CardsSection/CardsSection";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 import HeroSection from "./components/HeroSection/HeroSection";
 import "./App.scss";
 
@@ -25,8 +26,9 @@ function App() {
         <TagsSection />
         <CardsSection />
       </main>
-      <div className="footer">
+      <div className="bottom">
         <Contact />
+        <Footer />
       </div>
 
       <h1>Vite + React</h1>
