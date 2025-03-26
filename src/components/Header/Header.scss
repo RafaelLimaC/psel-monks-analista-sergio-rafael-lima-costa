@@ -1,17 +1,24 @@
 header {
   display: flex;
   justify-content: center;
-  z-index: 100;
 }
 
 .header-wrapper {
   max-width: 75.375rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
 
   display: flex;
   align-items: center;
   gap: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  background-color: var(--color-primary-800);
+
+  z-index: 0;
+
+  &.menu-open {
+    z-index: 100;
+  }
 
   .header-logo {
     height: 1rem;
@@ -24,11 +31,15 @@ header {
 
   &-list {
     display: flex;
-    gap: 2.75rem;
+    gap: 2rem;
 
     &-item {
       font-size: 1.125rem;
       cursor: pointer;
+
+      &:hover {
+        animation: slideY 400ms linear 100ms;
+      }
 
       a {
         font-weight: 200;
@@ -36,6 +47,34 @@ header {
         color: var(--color-primary-200);
         text-decoration: none;
         letter-spacing: 0.01em;
+        position: relative;
+        line-height: 1.5;
+
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: -1.25rem;
+          font-size: 1.25rem;
+          opacity: 0;
+          transform: translateY(-100%);
+
+          transition: opacity var(--animation-timing),
+            transform var(--animation-timing);
+        }
+      }
+
+      &:hover a {
+        font-weight: 500;
+        padding: 0;
+
+        &::before {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
     }
   }
@@ -109,20 +148,11 @@ header {
 // menu mobile
 .mobile-menu {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--color-secondary-300);
+  top: -6.375rem;
+
   z-index: 1;
   height: 100%;
   width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
 
   opacity: 0;
   transform: translateY(-100%);
@@ -130,33 +160,57 @@ header {
 
   &.open {
     opacity: 1;
-    transform: translateY(54px);
+    transform: translateY(calc(0px + 6.375rem));
   }
 
-  .mobile-menu-list {
+  &-wrapper {
+    background-color: var(--color-secondary-300);
+    width: 100%;
+    padding: 4.875rem 1.5rem 1.5rem 1.5rem;
+    height: 100%;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 
-    &-item {
-      font-size: 1.5rem;
-      cursor: pointer;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
 
-      a {
-        font-weight: 200;
-        font-size: 1.25rem;
-        color: var(--color-primary-200);
-        text-decoration: none;
-        letter-spacing: 0.01em;
+      color: var(--color-primary-800);
+      font-weight: 600;
+      font-size: 1.25rem;
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        cursor: pointer;
+        line-height: 1.5;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0.25rem;
+          font-size: 1.25rem;
+        }
       }
+    }
+
+    svg {
+      align-self: center;
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+//768 default
+@media screen and (min-width: 788px) {
   .header-wrapper {
     gap: 3rem;
     padding: 1.5rem 0;
+    margin: 0 1.5rem;
 
     .header-logo {
       height: 1.5rem;
@@ -170,5 +224,21 @@ header {
   .hamburger-menu,
   .mobile-menu {
     display: none;
+  }
+}
+
+@keyframes slideY {
+  0%,
+  25% {
+    transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  60% {
+    transform: translateY(20%);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  95% {
+    transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
 }
