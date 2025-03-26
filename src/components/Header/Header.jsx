@@ -23,6 +23,10 @@ function Header() {
             </li>
           </ul>
         </nav>
+        <label className="hamburger-menu" htmlFor="menu">
+          <input type="checkbox" id="menu" />
+        </label>
+        <div className="mobile-menu"></div>
       </div>
     </header>
   );

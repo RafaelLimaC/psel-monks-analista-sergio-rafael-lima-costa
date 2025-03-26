@@ -1,27 +1,31 @@
 header {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 100;
 }
 
 .header-wrapper {
   max-width: 75.375rem;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 
   .header-logo {
-    height: 1.5rem;
+    height: 1rem;
     cursor: pointer;
   }
 }
 
 .header-nav {
+  display: none;
+
   &-list {
     display: flex;
-    gap: 3rem;
+    gap: 2.75rem;
 
     &-item {
       font-size: 1.125rem;
@@ -32,8 +36,88 @@ header {
         font-size: 1.25rem;
         color: var(--color-primary-200);
         text-decoration: none;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
       }
     }
   }
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--color-primary-200);
+  border-radius: 999px;
+  transform-origin: left center;
+
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+
+  width: max-content;
+  padding: 0.25rem;
+
+  input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+
+    &:checked {
+      opacity: 0;
+      width: 0;
+    }
+  }
+
+  &:has(input:checked)::before {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+  }
+
+  &:has(input:checked)::after {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+  }
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  background-color: var(--color-secondary-500);
+  outline: 2px solid var(--color-primary-200);
+}
+
+@media screen and (min-width: 768px) {
+  .header-wrapper {
+    gap: 3rem;
+    padding: 1.5rem 0;
+
+    .header-logo {
+      height: 1.5rem;
+    }
+  }
+
+  .header-nav {
+    display: block;
+  }
+}
+
+:root {
+  --bar-width: 20px;
+  --bar-height: 2px;
+  --hamburger-gap: 4px;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --animation-timing: 200ms ease-in-out;
 }
