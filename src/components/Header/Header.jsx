@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 import Logo from "../../assets/logo.svg";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
       <div className="header-wrapper">
@@ -24,9 +30,9 @@ function Header() {
           </ul>
         </nav>
         <label className="hamburger-menu" htmlFor="menu">
-          <input type="checkbox" id="menu" />
+          <input type="checkbox" id="menu" onChange={handleMenuToggle} />
         </label>
-        <div className="mobile-menu"></div>
+        <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}></div>
       </div>
     </header>
   );
