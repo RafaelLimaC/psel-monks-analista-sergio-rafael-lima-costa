@@ -32,13 +32,25 @@
 
 .footer-links {
   display: flex;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 
   a {
     font-weight: 200;
-    letter-spacing: 0.04em;
-    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+    font-size: 1rem;
     text-decoration: none;
     color: var(--color-primary-200);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-links {
+    gap: 2.5rem;
+
+    a {
+      font-size: 1.25rem;
+    }
   }
 }

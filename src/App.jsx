@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "./components//Header/Header";
 import ProductsSection from "./components/ProductsSection/ProductsSection";
 import AppSection from "./components/AppSection/AppSection";
@@ -11,8 +10,6 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div className="hero">
@@ -30,19 +27,6 @@ function App() {
         <Contact />
         <Footer />
       </div>
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
