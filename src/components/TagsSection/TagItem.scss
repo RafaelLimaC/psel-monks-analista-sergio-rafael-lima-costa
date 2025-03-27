@@ -11,6 +11,13 @@
 
   cursor: pointer;
   border-radius: 9999px;
+
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: var(--color-secondary-500);
+    color: var(--color-primary-300);
+  }
 }
 
 @media screen and (min-width: 768px) {

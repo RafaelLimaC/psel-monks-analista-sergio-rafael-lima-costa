@@ -13,11 +13,17 @@ function Gallery() {
             Lorem ipsum dolor sit amet consectetur. Semper orci adipiscing
             faucibus sit scelerisque quis commodo
           </p>
-          <img src={bigImage} alt="" />
+          <div className="gallery-main__image">
+            <img src={bigImage} alt="" />
+          </div>
         </div>
         {/* TODO - remover infos chumbadas e pegar pela API */}
-        <img className="gallery-image" src={cardPicture} alt="" />
-        <img className="gallery-image" src={bigImage} alt="" />
+        <div className="gallery-image">
+          <img src={cardPicture} alt="" />
+        </div>
+        <div className="gallery-image">
+          <img src={bigImage} alt="" />
+        </div>
       </div>
     </div>
   );
