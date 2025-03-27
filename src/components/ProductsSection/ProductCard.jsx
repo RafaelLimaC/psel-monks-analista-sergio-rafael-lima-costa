@@ -1,16 +1,14 @@
-import cardPicture from "../../assets/temp/card-image.png";
 import "./ProductCard.scss";
 
-function ProductCard() {
+function ProductCard({ image, title, subtitle }) {
   return (
     <div className="products-card-item">
-      {/* TODO - remover infos chumbadas e pegar pela API */}
       <div className="products-card-item__image">
-        <img src={cardPicture} alt="" />
+        <img src={image} alt={title} />
       </div>
       <div className="products-card-item__text">
-        <h5>Lorem ipsum dolor</h5>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <h5>{title}</h5>
+        <p>{subtitle}</p>
       </div>
     </div>
   );

@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsSection.scss";
 import ProductCard from "./ProductCard";
+import { fetchFromWordPress } from "../../services/wordpressService";
 
 function Products() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const data = await fetchFromWordPress("products", {
+          _fields: "title,acf.subtitle,acf.large_image",
+          acf_format: "standard",
+        });
+        console.log(data);
+        setProducts(data);
+      } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
+      }
+    }
+
+    loadProducts();
+  }, []);
+
   return (
     <div className="products">
       <div className="products-title">
@@ -14,10 +34,14 @@ function Products() {
       </div>
 
       <div className="products-cards">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            title={product.title?.rendered || "Título não disponível"}
+            subtitle={product.acf?.subtitle || "Subtítulo não disponível"}
+            image={product.acf?.large_image || "URL da imagem não disponível"}
+          />
+        ))}
       </div>
     </div>
   );
