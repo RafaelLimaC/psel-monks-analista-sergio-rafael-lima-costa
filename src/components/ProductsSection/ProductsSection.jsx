@@ -13,7 +13,6 @@ function Products() {
           _fields: "title,acf.subtitle,acf.large_image",
           acf_format: "standard",
         });
-        console.log(data);
         setProducts(data);
       } catch (error) {
         console.error("Erro ao carregar produtos:", error);

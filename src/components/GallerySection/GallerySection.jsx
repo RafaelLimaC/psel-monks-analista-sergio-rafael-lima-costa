@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Gallery.scss";
+import "./GallerySection.scss";
 import GalleryImage from "./GalleryImage";
 import { fetchFromWordPress } from "../../services/wordpressService";
 
@@ -13,7 +13,6 @@ function Gallery() {
           _fields: "title,acf.subtitle,acf.large_image",
           acf_format: "standard",
         });
-        console.log(data);
         setGalleries(data);
       } catch (error) {
         console.error("Erro ao carregar galerias:", error);

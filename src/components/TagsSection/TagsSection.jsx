@@ -1,4 +1,3 @@
-import React from "react";
 import "./TagsSection.scss";
 import TagItem from "./TagItem";
 
@@ -7,10 +6,6 @@ function Tags() {
     <section className="tags">
       <h3 className="tags-title">Lorem ipsum dolor sit amet consectetur</h3>
       <ul className="tags-content">
-        {/* {items.map((item) => ( 
-          <TagItem key={item.id} name={item.name} />
-        )} */}
-
         <TagItem name="Perfumaria" />
         <TagItem name="Corpo e banho" />
         <TagItem name="Hidratante" />
