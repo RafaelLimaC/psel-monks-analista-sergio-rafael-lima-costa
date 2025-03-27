@@ -23,7 +23,7 @@ function Gallery() {
   }, []);
 
   return (
-    <div className="gallery">
+    <div className="gallery" id="gallery">
       <div className="gallery-wrapper">
         {galleries.length > 0 && (
           <div className="gallery-main">

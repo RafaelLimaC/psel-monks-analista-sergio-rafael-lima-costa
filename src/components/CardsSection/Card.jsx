@@ -1,14 +1,11 @@
 import "./Card.scss";
 
-function Card() {
+function Card({ title, content, buttonText }) {
   return (
     <div className="card-item">
-      <h5>Lorem ipsum dolor sit amet</h5>
-      <p>
-        Lorem ipsum dolor sit amet consectetur. Semper orci adipiscing faucibus
-        sit scelerisque quis commodo aenean viverra.
-      </p>
-      <button>Lorem ipsum</button>
+      <h5>{title}</h5>
+      <p>{content}</p>
+      <button>{buttonText}</button>
     </div>
   );
 }

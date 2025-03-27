@@ -12,13 +12,28 @@ function Contact() {
     mode: "onBlur",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    const reqOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Define o formato do payload
+      },
+      body: JSON.stringify(data),
+    };
+
+    const req = await fetch(
+      "http://localhost:8081/wpmonks/wp-json/contact-form-7/v1/contact-forms/68/feedback",
+      reqOptions
+    );
+
+    const response = await req.json();
+    console.log(response);
     console.log(data);
     reset();
   };
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <img src={contactImage} alt="" />
       <div className="contact-form-wrapper">
         <div className="contact-form__text">
@@ -36,7 +51,7 @@ function Contact() {
               <input
                 type="text"
                 placeholder="Nome*"
-                {...register("name", { required: true, minLength: 2 })}
+                {...register("your-name", { required: true, minLength: 2 })}
               />
               {errors.name && (
                 <span className="contact-form__inputs--error">
@@ -48,7 +63,7 @@ function Contact() {
               <input
                 type="email"
                 placeholder="Email*"
-                {...register("email", { required: true, minLength: 3 })}
+                {...register("your-email", { required: true, minLength: 3 })}
               />
               {errors.name && (
                 <span className="contact-form__inputs--error">
@@ -57,13 +72,17 @@ function Contact() {
               )}
             </div>
             <div className="contact-form__input--wrapper">
-              <input type="tel" placeholder="Telefone" {...register("tel")} />
+              <input
+                type="tel"
+                placeholder="Telefone"
+                {...register("your-tel")}
+              />
             </div>
             <div className="contact-form__input--wrapper">
               <input
                 type="text"
                 placeholder="Empresa"
-                {...register("company")}
+                {...register("your-company")}
               />
             </div>
           </div>

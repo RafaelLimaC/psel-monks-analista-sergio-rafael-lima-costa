@@ -23,7 +23,7 @@ function Products() {
   }, []);
 
   return (
-    <div className="products">
+    <div className="products" id="products">
       <div className="products-title">
         <h3>Lorem ipsum dolor sit amet consectetur</h3>
         <p>

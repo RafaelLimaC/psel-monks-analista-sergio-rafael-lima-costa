@@ -10,7 +10,6 @@ const BASE_URL = "http://localhost:8081/wpmonks/wp-json/wp/v2";
 export async function fetchFromWordPress(endpoint, params = {}) {
   const url = new URL(`${BASE_URL}/${endpoint}`);
 
-  // Adiciona os parâmetros à URL
   Object.keys(params).forEach((key) =>
     url.searchParams.append(key, params[key])
   );
