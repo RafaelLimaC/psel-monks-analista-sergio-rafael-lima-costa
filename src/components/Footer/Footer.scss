@@ -24,6 +24,13 @@
   gap: 2.5rem;
   padding-bottom: 2.5rem;
 
+  li:hover {
+    img {
+      filter: invert(23%) sepia(40%) saturate(626%) hue-rotate(209deg)
+        brightness(102%) contrast(104%);
+    }
+  }
+
   li img {
     height: 32px;
     cursor: pointer;

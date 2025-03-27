@@ -13,12 +13,17 @@ function Contact() {
   });
 
   const onSubmit = async (data) => {
+    const formData = new FormData();
+
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key]);
+    });
+
+    formData.append("_wpcf7_unit_tag", "X");
+
     const reqOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json", // Define o formato do payload
-      },
-      body: JSON.stringify(data),
+      body: formData, // Usa o FormData como body
     };
 
     const req = await fetch(
@@ -75,7 +80,7 @@ function Contact() {
               <input
                 type="tel"
                 placeholder="Telefone"
-                {...register("your-tel")}
+                {...register("your-tel", { minLength: 8 })}
               />
             </div>
             <div className="contact-form__input--wrapper">

@@ -26,10 +26,10 @@ function Footer() {
       </nav>
       <p>Lorem ipsum dolor sit amet</p>
       <div className="footer-links">
-        <a href="">Lorem ipsum</a>
-        <a href="">Lorem ipsum</a>
-        <a href="">Lorem ipsum</a>
-        <a href="">Lorem ipsum</a>
+        <a href="/#">Lorem ipsum</a>
+        <a href="/#">Lorem ipsum</a>
+        <a href="/#">Lorem ipsum</a>
+        <a href="/#">Lorem ipsum</a>
       </div>
     </footer>
   );

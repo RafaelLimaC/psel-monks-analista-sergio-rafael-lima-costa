@@ -143,6 +143,10 @@ table {
   --ff-inter: "Inter", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--ff-handvetica-neue);
   background-color: var(--color-primary-200);
