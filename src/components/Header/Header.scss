@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 header {
   position: fixed;
   top: 0;
@@ -14,6 +16,10 @@ header {
   &.menu-open {
     z-index: 900;
   }
+
+  @include header {
+    position: absolute;
+  }
 }
 
 .header-wrapper {
@@ -29,6 +35,12 @@ header {
 
   z-index: 0;
 
+  @include header {
+    gap: 3rem;
+    padding: 1.5rem 0;
+    margin: 0 1.5rem;
+  }
+
   &.menu-open {
     z-index: 900;
   }
@@ -36,11 +48,19 @@ header {
   .header-logo {
     height: 1rem;
     cursor: pointer;
+
+    @include header {
+      height: 1.5rem;
+    }
   }
 }
 
 .header-nav {
   display: none;
+
+  @include header {
+    display: block;
+  }
 
   &-list {
     display: flex;
@@ -118,6 +138,10 @@ header {
   width: max-content;
   padding: 0.25rem;
 
+  @include header {
+    display: none;
+  }
+
   input {
     appearance: none;
     padding: 0;
@@ -170,6 +194,10 @@ header {
   opacity: 0;
   transform: translateY(-100%);
   transition: opacity var(--animation-timing), transform var(--animation-timing);
+
+  @include header {
+    display: none;
+  }
 
   &.open {
     opacity: 1;
@@ -225,32 +253,6 @@ header {
       align-self: center;
       cursor: pointer;
     }
-  }
-}
-
-//768 default
-@media screen and (min-width: 788px) {
-  header {
-    position: absolute;
-  }
-
-  .header-wrapper {
-    gap: 3rem;
-    padding: 1.5rem 0;
-    margin: 0 1.5rem;
-
-    .header-logo {
-      height: 1.5rem;
-    }
-  }
-
-  .header-nav {
-    display: block;
-  }
-
-  .hamburger-menu,
-  .mobile-menu {
-    display: none;
   }
 }
 

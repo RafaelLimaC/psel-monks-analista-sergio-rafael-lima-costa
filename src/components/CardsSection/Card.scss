@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 .card-item {
   border: 2px solid var(--color-secondary-300);
   padding: 1.5rem;
@@ -12,12 +14,20 @@
   h5 {
     font-size: 1.25rem;
     padding-bottom: 0.75rem;
+
+    @include small-screen {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
+
+    @include small-screen {
+      font-size: 1.25rem;
+    }
   }
 
   button {
@@ -33,17 +43,5 @@
     font-weight: 600;
     line-height: 1.5rem;
     font-size: 1rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .card-item {
-    h5 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-    }
   }
 }

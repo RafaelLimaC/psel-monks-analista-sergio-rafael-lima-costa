@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 .products-card-item {
   background-color: var(--color-primary-100);
   border-radius: 0.5rem;
@@ -27,32 +29,26 @@
       font-size: 1.25rem;
       line-height: 1.25;
       padding-bottom: 0.5rem;
+
+      @include small-screen {
+        font-size: 1.5rem;
+      }
     }
 
     p {
       font-weight: 200;
       font-size: 1rem;
       line-height: 1.5;
+
+      @include small-screen {
+        font-size: 1.25rem;
+      }
     }
   }
 
   &:hover {
     img {
       transform: scale(1.05);
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .products-card-item {
-    &__text {
-      h5 {
-        line-height: 1.25;
-      }
-
-      p {
-        font-size: 1.25rem;
-      }
     }
   }
 }

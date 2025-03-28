@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 .contact {
   padding: 2rem 0;
   max-width: 75.375rem; //1206px
@@ -8,6 +10,12 @@
   align-items: center;
   flex-direction: column;
   gap: 2.5rem;
+
+  @include medium-screen {
+    padding: 4rem 0;
+    flex-direction: row;
+    gap: 2.5rem;
+  }
 
   &-form-wrapper {
     border-radius: 1.5rem;
@@ -26,12 +34,20 @@
       h4 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
+
+        @include medium-screen {
+          font-size: 2.5rem;
+        }
       }
 
       p {
         font-size: 1rem;
         font-weight: 200;
         margin-bottom: 1.5rem;
+
+        @include medium-screen {
+          font-size: 1.25rem;
+        }
       }
 
       span {
@@ -51,6 +67,10 @@
       flex-wrap: wrap;
       gap: 1.125rem;
 
+      @include medium-screen {
+        gap: 1.5rem;
+      }
+
       .contact-form__input--wrapper {
         position: relative;
         flex: 1 1 17rem;
@@ -66,6 +86,10 @@
         color: var(--color-primary-800);
         font-size: 1rem;
         font-weight: 300;
+
+        @include medium-screen {
+          font-size: 1.25rem;
+        }
 
         &::placeholder {
           color: var(--color-primary-600);
@@ -93,6 +117,17 @@
       justify-content: start;
       gap: 1rem;
 
+      @include medium-screen {
+        font-size: 1.5rem;
+      }
+
+      @include large-screen {
+        font-size: 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+      }
+
       p {
         text-wrap: nowrap;
       }
@@ -102,6 +137,10 @@
         gap: 1rem;
         align-items: center;
 
+        @include medium-screen {
+          gap: 2rem;
+        }
+
         span {
           background-color: var(--color-primary-300);
           padding: 0.5rem 0.75rem;
@@ -109,9 +148,18 @@
           border-radius: 0.5rem;
           color: var(--color-secondary-500);
 
+          @include medium-screen {
+            padding: 0.5rem 1.5rem;
+            font-size: 1.25rem;
+          }
+
           strong {
             color: var(--color-primary-800);
             padding: 0 0.5rem;
+
+            @include medium-screen {
+              padding: 0 1.5rem;
+            }
           }
         }
       }
@@ -126,6 +174,10 @@
         color: var(--color-primary-800);
         font-size: 1rem;
         font-weight: 300;
+
+        @include medium-screen {
+          font-size: 1.25rem;
+        }
 
         &::placeholder {
           color: var(--color-primary-600);
@@ -149,80 +201,6 @@
       line-height: 1.5;
       font-size: 1.125rem;
       cursor: pointer;
-    }
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .contact {
-    padding: 4rem 0;
-    flex-direction: row;
-    gap: 2.5rem;
-
-    &-form-wrapper {
-      .contact-form__text {
-        h4 {
-          font-size: 2.5rem;
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          font-size: 1.25rem;
-          font-weight: 200;
-          margin-bottom: 1.5rem;
-        }
-
-        span {
-          font-size: 1rem;
-          font-weight: 200;
-        }
-      }
-
-      .contact-form__inputs {
-        gap: 1.5rem;
-
-        input {
-          font-size: 1.25rem;
-        }
-      }
-
-      .contact-form__security {
-        font-size: 1.5rem;
-
-        &--verification {
-          gap: 2rem;
-
-          span {
-            background-color: var(--color-primary-300);
-            padding: 0.5rem 1.5rem;
-            font-size: 1.25rem;
-            border-radius: 0.5rem;
-            color: var(--color-secondary-500);
-
-            strong {
-              color: var(--color-primary-800);
-              padding: 0 1.5rem;
-            }
-          }
-        }
-
-        input {
-          font-size: 1.25rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .contact {
-    &-form-wrapper {
-      .contact-form__security {
-        font-size: 1.5rem;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-      }
     }
   }
 }

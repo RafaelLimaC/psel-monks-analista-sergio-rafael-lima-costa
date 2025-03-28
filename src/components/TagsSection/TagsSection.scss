@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 .tags {
   padding: 2rem 0;
   max-width: 75.375rem; //1206px
@@ -8,10 +10,18 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  @include small-screen {
+    gap: 2.5rem;
+  }
+
   &-title {
     letter-spacing: 0.04em;
     color: var(--color-primary-800);
     font-size: 1.5rem;
+
+    @include small-screen {
+      font-size: 2.5rem;
+    }
   }
 
   &-content {
@@ -19,18 +29,8 @@
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .tags {
-    gap: 2.5rem;
-
-    &-title {
-      font-size: 2.5rem;
-    }
-
-    &-content {
+    @include small-screen {
       gap: 1.5rem;
     }
   }

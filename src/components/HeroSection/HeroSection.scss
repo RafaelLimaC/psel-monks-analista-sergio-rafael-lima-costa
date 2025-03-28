@@ -1,3 +1,5 @@
+@import "@/styles/breakpoints";
+
 .hero {
   background-color: var(--color-primary-800);
   color: var(--color-primary-200);
@@ -5,6 +7,11 @@
   border-radius: 0;
   overflow: hidden;
   padding-top: 54px;
+
+  @include small-screen {
+    border-radius: 0 0 2rem 2rem;
+    padding-top: 78px;
+  }
 
   &-content {
     max-width: 77.375rem; //1206px
@@ -18,6 +25,10 @@
     &__text {
       max-width: 43.75rem; //700px
       padding: 1.5rem 0;
+
+      @include small-screen {
+        padding: 2.25rem 0;
+      }
     }
 
     &__image {
@@ -27,14 +38,13 @@
       height: 100%;
       pointer-events: none;
       z-index: 10;
+
+      @include small-screen {
+        left: max(700px, 62%);
+      }
     }
 
     &__detail {
-      svg {
-        height: 51px;
-        width: 38px;
-      }
-
       max-width: 50%;
       width: 100%;
       display: flex;
@@ -47,6 +57,20 @@
       animation-iteration-count: 1;
       stroke-dasharray: 800;
       stroke-dashoffset: 300;
+
+      @include small-screen {
+        max-width: 43.75rem;
+      }
+
+      svg {
+        height: 51px;
+        width: 38px;
+
+        @include small-screen {
+          height: 100px;
+          width: 72px;
+        }
+      }
     }
   }
 
@@ -56,6 +80,11 @@
     letter-spacing: 0.02em;
     line-height: 1.25;
     max-width: max(15ch, 55%);
+
+    @include small-screen {
+      font-size: 3rem;
+      max-width: 25ch;
+    }
   }
 
   p {
@@ -65,39 +94,8 @@
     font-weight: 100;
     max-width: max(20ch, 55%);
     line-height: 1.25;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .hero {
-    border-radius: 0 0 2rem 2rem;
-    padding-top: 78px;
-
-    &-content {
-      &__text {
-        padding: 2.25rem 0;
-      }
-
-      &__image {
-        left: max(700px, 62%);
-      }
-
-      &__detail {
-        svg {
-          height: 100px;
-          width: 72px;
-        }
-
-        max-width: 43.75rem;
-      }
-    }
-
-    h1 {
-      font-size: 3rem;
-      max-width: 25ch;
-    }
-
-    p {
+    @include small-screen {
       font-size: 1.5rem;
       max-width: 50ch;
     }
