@@ -43,9 +43,10 @@
       margin-bottom: 1.5rem;
 
       animation: strokeOffSet 2s linear alternate infinite;
+      animation-delay: 2s;
       animation-iteration-count: 1;
       stroke-dasharray: 800;
-      stroke-dashoffset: 500;
+      stroke-dashoffset: 300;
     }
   }
 

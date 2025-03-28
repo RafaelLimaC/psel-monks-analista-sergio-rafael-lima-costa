@@ -9,10 +9,17 @@ function Header() {
   const [categories, setCategories] = useState([]);
   const navbarRef = useRef(null);
   const prevScrollPos = useRef(window.pageYOffset);
-  const checkboxRef = useRef(null); // Referência para a checkbox
+  const checkboxRef = useRef(null);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    if (checkboxRef.current) {
+      checkboxRef.current.checked = false;
+      setIsMenuOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -51,10 +58,7 @@ function Header() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768 && isMenuOpen) {
-        setIsMenuOpen(false); // Fecha o menu
-        if (checkboxRef.current) {
-          checkboxRef.current.checked = false; // Desmarca a checkbox
-        }
+        closeMenu();
       }
     };
 
@@ -62,7 +66,7 @@ function Header() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMenuOpen]); // Dependência para monitorar mudanças no estado do menu
+  }, [isMenuOpen]);
 
   return (
     <header
@@ -91,7 +95,7 @@ function Header() {
             type="checkbox"
             id="menu"
             onChange={handleMenuToggle}
-            ref={checkboxRef} // Adiciona a referência à checkbox
+            ref={checkboxRef}
           />
         </label>
       </div>
@@ -109,7 +113,9 @@ function Header() {
                 </li>
               ))}
           </ul>
-          <BackSVG />
+          <div className="svg" onClick={closeMenu}>
+            <BackSVG />
+          </div>
         </div>
       </div>
     </header>

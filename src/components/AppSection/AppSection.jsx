@@ -6,7 +6,6 @@ function AppSection() {
   return (
     <section className="application">
       <div className="application-wrapper">
-        {/* TODO create a component for titles */}
         <div className="application-title">
           <h3>Lorem ipsum dolor sit amet consectetur</h3>
           <p>
