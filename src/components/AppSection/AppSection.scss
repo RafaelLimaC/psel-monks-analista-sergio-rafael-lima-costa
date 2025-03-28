@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 .application {
   padding: 2rem 0 4rem;
@@ -17,7 +17,7 @@
   align-items: center;
   gap: 2.5rem;
 
-  @include small-screen {
+  @include breakpoints.small-screen {
     flex-direction: row;
     padding: 2.5rem;
   }
@@ -30,14 +30,14 @@
   gap: 0.75rem;
   color: var(--color-primary-200);
 
-  @include small-screen {
+  @include breakpoints.small-screen {
     gap: 0.5rem;
   }
 
   h3 {
     font-size: 1.5rem;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 2.5rem;
     }
   }
@@ -46,7 +46,7 @@
     font-size: 1rem;
     font-weight: 200;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 1.5rem;
     }
   }
@@ -61,7 +61,7 @@
   img {
     width: 100%;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       width: 216px;
     }
   }

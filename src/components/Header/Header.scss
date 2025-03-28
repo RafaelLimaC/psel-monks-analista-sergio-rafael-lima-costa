@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 header {
   position: fixed;
@@ -17,7 +17,7 @@ header {
     z-index: 900;
   }
 
-  @include header {
+  @include breakpoints.header {
     position: absolute;
   }
 }
@@ -35,7 +35,7 @@ header {
 
   z-index: 0;
 
-  @include header {
+  @include breakpoints.header {
     gap: 3rem;
     padding: 1.5rem 0;
     margin: 0 1.5rem;
@@ -49,7 +49,7 @@ header {
     height: 1rem;
     cursor: pointer;
 
-    @include header {
+    @include breakpoints.header {
       height: 1.5rem;
     }
   }
@@ -58,7 +58,7 @@ header {
 .header-nav {
   display: none;
 
-  @include header {
+  @include breakpoints.header {
     display: block;
   }
 
@@ -70,8 +70,18 @@ header {
       font-size: 1.125rem;
       cursor: pointer;
 
-      &:hover {
+      &.hovered {
         animation: slideY 400ms linear 100ms;
+
+        a {
+          font-weight: 500;
+          padding: 0;
+
+          &::before {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
       }
 
       a {
@@ -99,21 +109,10 @@ header {
             transform var(--animation-timing);
         }
       }
-
-      &:hover a {
-        font-weight: 500;
-        padding: 0;
-
-        &::before {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
     }
   }
 }
 
-// hambuger menu
 .hamburger-menu::before,
 .hamburger-menu::after,
 .hamburger-menu input {
@@ -138,7 +137,7 @@ header {
   width: max-content;
   padding: 0.25rem;
 
-  @include header {
+  @include breakpoints.header {
     display: none;
   }
 
@@ -182,7 +181,7 @@ header {
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
   --animation-timing: 200ms ease-in-out;
 }
-// menu mobile
+
 .mobile-menu {
   position: absolute;
   top: 0;
@@ -195,7 +194,7 @@ header {
   transform: translateY(-100%);
   transition: opacity var(--animation-timing), transform var(--animation-timing);
 
-  @include header {
+  @include breakpoints.header {
     display: none;
   }
 

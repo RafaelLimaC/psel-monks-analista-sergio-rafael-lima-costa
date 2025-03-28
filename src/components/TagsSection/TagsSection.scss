@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 .tags {
   padding: 2rem 0;
@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 1.5rem;
 
-  @include small-screen {
+  @include breakpoints.small-screen {
     gap: 2.5rem;
   }
 
@@ -19,7 +19,7 @@
     color: var(--color-primary-800);
     font-size: 1.5rem;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 2.5rem;
     }
   }
@@ -30,7 +30,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       gap: 1.5rem;
     }
   }

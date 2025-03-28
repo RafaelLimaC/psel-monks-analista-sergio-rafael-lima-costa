@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 .card-item {
   border: 2px solid var(--color-secondary-300);
@@ -15,7 +15,7 @@
     font-size: 1.25rem;
     padding-bottom: 0.75rem;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 1.5rem;
     }
   }
@@ -25,7 +25,7 @@
     font-weight: 300;
     line-height: 1.5;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 1.25rem;
     }
   }

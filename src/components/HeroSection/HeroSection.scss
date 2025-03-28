@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 .hero {
   background-color: var(--color-primary-800);
@@ -8,7 +8,7 @@
   overflow: hidden;
   padding-top: 54px;
 
-  @include small-screen {
+  @include breakpoints.small-screen {
     border-radius: 0 0 2rem 2rem;
     padding-top: 78px;
   }
@@ -26,7 +26,7 @@
       max-width: 43.75rem; //700px
       padding: 1.5rem 0;
 
-      @include small-screen {
+      @include breakpoints.small-screen {
         padding: 2.25rem 0;
       }
     }
@@ -39,7 +39,7 @@
       pointer-events: none;
       z-index: 10;
 
-      @include small-screen {
+      @include breakpoints.small-screen {
         left: max(700px, 62%);
       }
     }
@@ -58,7 +58,7 @@
       stroke-dasharray: 800;
       stroke-dashoffset: 300;
 
-      @include small-screen {
+      @include breakpoints.small-screen {
         max-width: 43.75rem;
       }
 
@@ -66,7 +66,7 @@
         height: 51px;
         width: 38px;
 
-        @include small-screen {
+        @include breakpoints.small-screen {
           height: 100px;
           width: 72px;
         }
@@ -81,7 +81,7 @@
     line-height: 1.25;
     max-width: max(15ch, 55%);
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 3rem;
       max-width: 25ch;
     }
@@ -95,7 +95,7 @@
     max-width: max(20ch, 55%);
     line-height: 1.25;
 
-    @include small-screen {
+    @include breakpoints.small-screen {
       font-size: 1.5rem;
       max-width: 50ch;
     }

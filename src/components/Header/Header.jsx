@@ -6,6 +6,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const navbarRef = useRef(null);
   const prevScrollPos = useRef(window.pageYOffset);
   const checkboxRef = useRef(null);
@@ -25,6 +26,10 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isMenuOpen) {
+        return;
+      }
+
       const currentScrollPos = window.pageYOffset;
       if (prevScrollPos.current > currentScrollPos) {
         navbarRef.current.style.top = "0";
@@ -38,7 +43,7 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,7 +76,13 @@ function Header() {
               .slice()
               .reverse()
               .map((category, index) => (
-                <li key={index} className="header-nav-list-item">
+                <li
+                  key={index}
+                  className={`header-nav-list-item ${
+                    hoveredIndex === index ? "hovered" : ""
+                  }`}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                >
                   <a href={category.acf?.href || "#"}>
                     {category.title?.rendered || "Categoria"}
                   </a>
@@ -96,7 +107,7 @@ function Header() {
               .reverse()
               .map((category, index) => (
                 <li key={index}>
-                  <a href={category.acf?.href || "#"}>
+                  <a href={category.acf?.href || "#"} onClick={closeMenu}>
                     {category.title?.rendered || "Categoria"}
                   </a>
                 </li>

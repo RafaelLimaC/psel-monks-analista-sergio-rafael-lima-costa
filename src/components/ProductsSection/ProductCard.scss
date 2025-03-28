@@ -1,4 +1,4 @@
-@import "@/styles/breakpoints";
+@use "@/styles/breakpoints";
 
 .products-card-item {
   background-color: var(--color-primary-100);
@@ -30,7 +30,7 @@
       line-height: 1.25;
       padding-bottom: 0.5rem;
 
-      @include small-screen {
+      @include breakpoints.small-screen {
         font-size: 1.5rem;
       }
     }
@@ -40,7 +40,7 @@
       font-size: 1rem;
       line-height: 1.5;
 
-      @include small-screen {
+      @include breakpoints.small-screen {
         font-size: 1.25rem;
       }
     }
