@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8081/wpmonks/wp-json/wp/v2";
+const BASE_URL = "https://linen-horse-773831.hostingersite.com/wp-json/wp/v2";
 
 /**
  * Função para buscar produtos da API do WordPress.

@@ -27,7 +27,7 @@ function Contact() {
     };
 
     const req = await fetch(
-      "http://localhost:8081/wpmonks/wp-json/contact-form-7/v1/contact-forms/68/feedback",
+      "https://linen-horse-773831.hostingersite.com/wp-json/contact-form-7/v1/contact-forms/68/feedback",
       reqOptions
     );
 
