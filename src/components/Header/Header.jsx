@@ -2,14 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Header.scss";
 import Logo from "../../assets/logo.svg";
 import BackSVG from "../shared/BackSVG";
-import { fetchFromWordPress } from "../../services/wordpressService";
+import { useNavigation } from "../../hooks/useNavigation";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
   const navbarRef = useRef(null);
   const prevScrollPos = useRef(window.pageYOffset);
   const checkboxRef = useRef(null);
+
+  const { categories, error } = useNavigation();
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,22 +22,6 @@ function Header() {
       setIsMenuOpen(false);
     }
   };
-
-  useEffect(() => {
-    async function loadCategories() {
-      try {
-        const data = await fetchFromWordPress("navegation", {
-          _fields: "title,acf.href",
-          acf_format: "standard",
-        });
-        setCategories(data);
-      } catch (error) {
-        console.error("Erro ao carregar categorias:", error);
-      }
-    }
-
-    loadCategories();
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +52,10 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMenuOpen]);
+
+  if (error) {
+    console.error("Erro ao carregar categorias:", error);
+  }
 
   return (
     <header

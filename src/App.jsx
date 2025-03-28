@@ -1,4 +1,4 @@
-import Header from "./components//Header/Header";
+import Header from "./components/Header/Header";
 import ProductsSection from "./components/ProductsSection/ProductsSection";
 import AppSection from "./components/AppSection/AppSection";
 import GallerySection from "./components/GallerySection/GallerySection";

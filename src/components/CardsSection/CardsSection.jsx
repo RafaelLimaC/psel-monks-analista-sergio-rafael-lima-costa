@@ -1,25 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./CardsSection.scss";
 import Card from "./Card";
-import { fetchFromWordPress } from "../../services/wordpressService";
+import { useCards } from "../../hooks/useCards";
 
 function CardsSection() {
-  const [cards, setCards] = useState([]);
+  const { cards, error } = useCards();
 
-  useEffect(() => {
-    async function loadCards() {
-      try {
-        const data = await fetchFromWordPress("card", {
-          _fields: "title,acf",
-        });
-        setCards(data);
-      } catch (error) {
-        console.error("Erro ao carregar os cards:", error);
-      }
-    }
-
-    loadCards();
-  }, []);
+  if (error) {
+    console.error("Erro ao carregar os cards:", error);
+  }
 
   return (
     <section className="cards">

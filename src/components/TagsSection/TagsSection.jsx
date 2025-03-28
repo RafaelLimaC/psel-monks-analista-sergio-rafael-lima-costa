@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./TagsSection.scss";
 import TagItem from "./TagItem";
-import { fetchFromWordPress } from "../../services/wordpressService";
+import { useLabels } from "../../hooks/useLabels";
 
 function Tags() {
-  const [tags, setTags] = useState([]);
+  const { labels: tags, error } = useLabels(15);
 
-  useEffect(() => {
-    async function loadTags() {
-      try {
-        const data = await fetchFromWordPress("label", {
-          _fields: "title",
-          per_page: 15,
-        });
-        setTags(data);
-      } catch (error) {
-        console.error("Erro ao carregar tags:", error);
-      }
-    }
-
-    loadTags();
-  }, []);
+  if (error) {
+    console.error("Erro ao carregar tags:", error);
+  }
 
   return (
     <section className="tags" id="tags">

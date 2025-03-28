@@ -1,6 +1,8 @@
+import React from "react";
 import contactImage from "../../assets/contact-image.svg";
 import "./Contact.scss";
 import { useForm } from "react-hook-form";
+import { useContactForm } from "../../hooks/useContactForm";
 
 function Contact() {
   const {
@@ -12,29 +14,15 @@ function Contact() {
     mode: "onBlur",
   });
 
+  const { submitForm } = useContactForm();
+
   const onSubmit = async (data) => {
-    const formData = new FormData();
-
-    Object.keys(data).forEach((key) => {
-      formData.append(key, data[key]);
-    });
-
-    formData.append("_wpcf7_unit_tag", "X");
-
-    const reqOptions = {
-      method: "POST",
-      body: formData, // Usa o FormData como body
-    };
-
-    const req = await fetch(
-      "https://linen-horse-773831.hostingersite.com/wp-json/contact-form-7/v1/contact-forms/68/feedback",
-      reqOptions
-    );
-
-    const response = await req.json();
-    console.log(response);
-    console.log(data);
-    reset();
+    try {
+      await submitForm(data);
+      reset();
+    } catch (err) {
+      console.error("Erro ao enviar o formulário:", err);
+    }
   };
 
   return (
@@ -58,7 +46,7 @@ function Contact() {
                 placeholder="Nome*"
                 {...register("your-name", { required: true, minLength: 2 })}
               />
-              {errors.name && (
+              {errors["your-name"] && (
                 <span className="contact-form__inputs--error">
                   Esse campo é obrigatório
                 </span>
@@ -70,7 +58,7 @@ function Contact() {
                 placeholder="Email*"
                 {...register("your-email", { required: true, minLength: 3 })}
               />
-              {errors.name && (
+              {errors["your-email"] && (
                 <span className="contact-form__inputs--error">
                   Esse campo é obrigatório
                 </span>

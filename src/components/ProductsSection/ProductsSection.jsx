@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ProductsSection.scss";
 import ProductCard from "./ProductCard";
-import { fetchFromWordPress } from "../../services/wordpressService";
+import { useProducts } from "../../hooks/useProducts";
 
-function Products() {
-  const [products, setProducts] = useState([]);
+function ProductsSection() {
+  const { products, error } = useProducts();
 
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const data = await fetchFromWordPress("products", {
-          _fields: "title,acf.subtitle,acf.large_image",
-          acf_format: "standard",
-        });
-        setProducts(data);
-      } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
-      }
-    }
-
-    loadProducts();
-  }, []);
+  if (error) {
+    console.error("Erro ao carregar os produtos:", error);
+  }
 
   return (
     <div className="products" id="products">
@@ -46,4 +34,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default ProductsSection;

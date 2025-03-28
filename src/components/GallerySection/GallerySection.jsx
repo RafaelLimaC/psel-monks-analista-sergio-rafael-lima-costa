@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./GallerySection.scss";
 import GalleryImage from "./GalleryImage";
-import { fetchFromWordPress } from "../../services/wordpressService";
+import { useGalleries } from "../../hooks/useGalleries";
 
 function Gallery() {
-  const [galleries, setGalleries] = useState([]);
+  const { galleries, error } = useGalleries();
 
-  useEffect(() => {
-    async function loadGalleries() {
-      try {
-        const data = await fetchFromWordPress("galleries", {
-          _fields: "title,acf.subtitle,acf.large_image",
-          acf_format: "standard",
-        });
-        setGalleries(data);
-      } catch (error) {
-        console.error("Erro ao carregar galerias:", error);
-      }
-    }
-
-    loadGalleries();
-  }, []);
+  if (error) {
+    console.error("Erro ao carregar galerias:", error);
+  }
 
   return (
     <div className="gallery" id="gallery">
