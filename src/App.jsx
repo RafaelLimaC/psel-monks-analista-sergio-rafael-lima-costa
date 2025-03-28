@@ -12,8 +12,8 @@ import "./App.scss";
 function App() {
   return (
     <>
+      <Header />
       <div className="hero">
-        <Header />
         <HeroSection />
       </div>
       <main>
