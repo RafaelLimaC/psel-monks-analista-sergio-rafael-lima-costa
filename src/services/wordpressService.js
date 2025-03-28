@@ -5,6 +5,7 @@ const BASE_URL = "https://linen-horse-773831.hostingersite.com/wp-json";
  * @param {Object} params
  * @returns {Promise<Object[]>}
  */
+
 export async function fetchFromWordPress(endpoint, params = {}) {
   const url = new URL(`${BASE_URL}/wp/v2/${endpoint}`);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./GallerySection.scss";
 import GalleryImage from "./GalleryImage";
-import { useGalleries } from "../../hooks/useGalleries";
+import { useGalleries } from "@/hooks/useGalleries";
 
 function Gallery() {
   const { galleries, error } = useGalleries();

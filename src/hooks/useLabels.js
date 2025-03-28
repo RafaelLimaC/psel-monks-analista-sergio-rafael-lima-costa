@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchLabels } from "../services/wordpressService";
+import { fetchLabels } from "@/services/wordpressService";
 
 export function useLabels(perPage = 15) {
   const [labels, setLabels] = useState([]);

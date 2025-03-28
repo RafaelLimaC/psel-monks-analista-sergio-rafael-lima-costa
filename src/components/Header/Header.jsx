@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Header.scss";
-import Logo from "../../assets/logo.svg";
-import BackSVG from "../shared/BackSVG";
-import { useNavigation } from "../../hooks/useNavigation";
+import Logo from "@/assets/logo.svg";
+import BackSVG from "@/components/shared/BackSVG";
+import { useNavigation } from "@/hooks/useNavigation";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

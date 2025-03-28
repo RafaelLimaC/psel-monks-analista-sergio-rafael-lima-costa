@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchNavigation } from "../services/wordpressService";
+import { fetchNavigation } from "@/services/wordpressService";
 
 export function useNavigation() {
   const [categories, setCategories] = useState([]);

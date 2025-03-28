@@ -1,6 +1,6 @@
-import backgroundImage from "../../assets/background-image.svg";
+import backgroundImage from "@/assets/background-image.svg";
 import "./HeroSection.scss";
-import ScrollSVG from "../shared/ScrollSVG";
+import ScrollSVG from "@/components/shared/ScrollSVG";
 
 function HeroSection() {
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProducts } from "../services/wordpressService";
+import { fetchProducts } from "@/services/wordpressService";
 
 export function useProducts() {
   const [products, setProducts] = useState([]);

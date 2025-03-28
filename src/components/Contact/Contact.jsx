@@ -1,8 +1,8 @@
 import React from "react";
-import contactImage from "../../assets/contact-image.svg";
+import contactImage from "@/assets/contact-image.svg";
 import "./Contact.scss";
 import { useForm } from "react-hook-form";
-import { useContactForm } from "../../hooks/useContactForm";
+import { useContactForm } from "@/hooks/useContactForm";
 
 function Contact() {
   const {

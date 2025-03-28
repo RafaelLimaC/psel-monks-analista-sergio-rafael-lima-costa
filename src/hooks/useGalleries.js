@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchGalleries } from "../services/wordpressService";
+import { fetchGalleries } from "@/services/wordpressService";
 
 export function useGalleries() {
   const [galleries, setGalleries] = useState([]);

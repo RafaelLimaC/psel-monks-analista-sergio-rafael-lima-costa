@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.scss";
-import facebook from "../../assets/facebook.svg";
-import instagram from "../../assets/instagram.svg";
-import twitter from "../../assets/twitter.svg";
-import whatsapp from "../../assets/whatsapp.svg";
+import facebook from "@/assets/facebook.svg";
+import instagram from "@/assets/instagram.svg";
+import twitter from "@/assets/twitter.svg";
+import whatsapp from "@/assets/whatsapp.svg";
 
 function Footer() {
   return (

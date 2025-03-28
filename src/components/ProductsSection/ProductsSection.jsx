@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductsSection.scss";
 import ProductCard from "./ProductCard";
-import { useProducts } from "../../hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 
 function ProductsSection() {
   const { products, error } = useProducts();

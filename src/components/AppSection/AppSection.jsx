@@ -1,6 +1,6 @@
 import "./AppSection.scss";
-import appStore from "../../assets/app-store.svg";
-import googlePlay from "../../assets/google-play.svg";
+import appStore from "@/assets/app-store.svg";
+import googlePlay from "@/assets/google-play.svg";
 
 function AppSection() {
   return (

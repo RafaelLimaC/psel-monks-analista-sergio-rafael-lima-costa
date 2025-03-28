@@ -1,7 +1,7 @@
 import React from "react";
 import "./TagsSection.scss";
 import TagItem from "./TagItem";
-import { useLabels } from "../../hooks/useLabels";
+import { useLabels } from "@/hooks/useLabels";
 
 function Tags() {
   const { labels: tags, error } = useLabels(15);

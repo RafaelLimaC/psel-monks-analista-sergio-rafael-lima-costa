@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { sendContactForm } from "../services/wordpressService";
+import { sendContactForm } from "@/services/wordpressService";
 
 export function useContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);

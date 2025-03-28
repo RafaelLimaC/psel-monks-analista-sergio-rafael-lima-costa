@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardsSection.scss";
 import Card from "./Card";
-import { useCards } from "../../hooks/useCards";
+import { useCards } from "@/hooks/useCards";
 
 function CardsSection() {
   const { cards, error } = useCards();

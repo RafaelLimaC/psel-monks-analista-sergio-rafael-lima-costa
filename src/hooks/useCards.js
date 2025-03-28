@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchCards } from "../services/wordpressService";
+import { fetchCards } from "@/services/wordpressService";
 
 export function useCards() {
   const [cards, setCards] = useState([]);
