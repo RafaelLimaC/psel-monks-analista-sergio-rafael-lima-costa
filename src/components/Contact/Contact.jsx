@@ -17,6 +17,7 @@ function Contact() {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [userResult, setUserResult] = useState("");
+  const [isInvalid, setIsInvalid] = useState(false);
 
   const { submitForm } = useContactForm();
 
@@ -29,13 +30,26 @@ function Contact() {
     generateRandomNumbers();
   }, []);
 
+  useEffect(() => {
+    const correctResult = num1 + num2;
+    if (userResult === "") {
+      setIsInvalid(false);
+    } else if (parseInt(userResult, 10) !== correctResult) {
+      setIsInvalid(true);
+    } else {
+      setIsInvalid(false);
+    }
+  }, [userResult, num1, num2]);
+
   const onSubmit = async (data) => {
     const correctResult = num1 + num2;
 
     if (parseInt(userResult, 10) !== correctResult) {
-      alert("Resultado da verificação de segurança incorreto.");
+      setIsInvalid(true);
       return;
     }
+
+    setIsInvalid(false);
 
     try {
       await submitForm(data);
@@ -115,6 +129,7 @@ function Contact() {
                 placeholder="Resultado*"
                 value={userResult}
                 onChange={(e) => setUserResult(e.target.value)}
+                className={isInvalid ? "invalid" : ""}
               />
             </div>
           </div>

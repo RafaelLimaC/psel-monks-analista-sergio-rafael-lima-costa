@@ -162,6 +162,10 @@
             }
           }
         }
+
+        input.invalid {
+          outline: 2px solid var(--color-invalid);
+        }
       }
 
       input {
