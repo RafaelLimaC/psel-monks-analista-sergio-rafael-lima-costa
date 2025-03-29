@@ -28,7 +28,6 @@ function Contact() {
   const onSubmit = async (data) => {
     validateSecurity();
     if (!isSecurityValid) {
-      console.log("O resultado da verificação de segurança está incorreto.");
       return;
     }
 

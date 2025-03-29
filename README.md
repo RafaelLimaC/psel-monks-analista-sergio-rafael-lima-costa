@@ -12,7 +12,7 @@
 ## Descrição
 
 Uma landing page feita em **React** + **Vite** recebendo os dados que
-são exibidos no front através da API REST do WordPress. O é completamente responsivo
+são exibidos no front através da API REST do WordPress. O site é completamente responsivo
 para todos os tamanhos de tela e conta com ferramentas de acessibilidade para
 melhorar a experiência do usuário.
 
@@ -21,7 +21,7 @@ melhorar a experiência do usuário.
 Se você não quiser baixar e configurar o projeto localmente, tudo está hospedado online!
 
 - **Frontend**: Acesse [https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/](https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/)
-- **Backend**: Instância do WordPress hospedada na Hostinger, garantindo facilidade [link](https://linen-horse-773831.hostingersite.com/wp-json/wp/v2/).
+- **Backend**: Instância do WordPress hospedada na Hostinger, acesse aqui: [link](https://linen-horse-773831.hostingersite.com/wp-json/wp/v2/).
 
 ## Tecnologias Utilizadas
 
@@ -30,6 +30,7 @@ Se você não quiser baixar e configurar o projeto localmente, tudo está hosped
 - **ESLint**: Ferramenta de linting para manter a qualidade do código.
 - **React Hook Form**: Gerenciamento eficiente de formulários.
 - **Sass Embedded**: Suporte para pré-processamento de estilos com Sass.
+- **Vitest**: Biblioteca de testes do Vite, junto com ela usei a @testing-library/react.
 - **dotenv**: Biblioteca para carregar variáveis de ambiente a partir de um arquivo .env, útil para configurar dados sensíveis como credenciais de banco de dados e chaves de API.
 
 ## Estrutura do Projeto
@@ -39,6 +40,7 @@ Se você não quiser baixar e configurar o projeto localmente, tudo está hosped
   - **`components/`**: Cada componente possui seu próprio arquivo `.jsx` e `.scss` para estilos.
   - **`hooks/`**: Centraliza os hooks para melhor organização, reutilização e escalabilidade do código.
   - **`services/`**: Mantém a lógica de serviços separada dos hooks e dos componentes, permitindo a criação de **dumb components**, que se limitam à exibição de elementos na tela sem lógica de negócio.
+  - **`tests/`**: Todos os testes estão organizados nessa pasta para melhor visualização.
 
 - **`.env`**: Gerenciamento de variáveis de ambiente.
 - **`vite.config.js`**: Configuração do Vite, incluindo alias para facilitar importações.
@@ -73,6 +75,7 @@ No diretório do projeto, você pode executar os seguintes comandos:
 - `pnpm run build` → Gera a build de produção.
 - `pnpm run preview` → Visualiza a build de produção localmente.
 - `pnpm run lint` → Executa o ESLint para verificar problemas no código.
+- `pnpm run test` → Executa os testes do Vitest.
 
 ## Sobre o WordPress
 
@@ -90,6 +93,4 @@ No diretório do projeto, você pode executar os seguintes comandos:
 
    - Armazena os dados enviados pelo formulário em um custom post type.
 
-
 https://github.com/user-attachments/assets/7fb1e094-1d81-4fec-9078-39b3231596bd
-
