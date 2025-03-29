@@ -15,6 +15,7 @@ function HeroSection() {
       <img
         decoding="async"
         className="hero-content__image"
+        loading="lazy"
         src={backgroundImage}
         alt="Media Monks"
       />

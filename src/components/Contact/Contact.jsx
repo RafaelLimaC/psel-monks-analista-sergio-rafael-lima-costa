@@ -2,7 +2,7 @@ import contactImage from "@/assets/contact-image.svg";
 import "./Contact.scss";
 import { useForm } from "react-hook-form";
 import { useContactForm } from "@/hooks/useContactForm";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Contact() {
   const {
@@ -14,20 +14,26 @@ function Contact() {
     mode: "onBlur",
   });
 
-  const [num1] = useState(123);
-  const [num2] = useState(456);
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
   const [userResult, setUserResult] = useState("");
-  const [isSecurityValid, setIsSecurityValid] = useState(false);
+
   const { submitForm } = useContactForm();
 
-  const validateSecurity = () => {
-    const correctResult = num1 + num2;
-    setIsSecurityValid(parseInt(userResult, 10) === correctResult);
+  const generateRandomNumbers = () => {
+    setNum1(Math.floor(Math.random() * 900) + 100);
+    setNum2(Math.floor(Math.random() * 900) + 100);
   };
 
+  useEffect(() => {
+    generateRandomNumbers();
+  }, []);
+
   const onSubmit = async (data) => {
-    validateSecurity();
-    if (!isSecurityValid) {
+    const correctResult = num1 + num2;
+
+    if (parseInt(userResult, 10) !== correctResult) {
+      alert("Resultado da verificação de segurança incorreto.");
       return;
     }
 
@@ -35,6 +41,7 @@ function Contact() {
       await submitForm(data);
       reset();
       setUserResult("");
+      generateRandomNumbers();
     } catch (err) {
       console.error("Erro ao enviar o formulário:", err);
     }
@@ -42,7 +49,7 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <img src={contactImage} alt="" />
+      <img src={contactImage} alt="Entre em contato" />
       <div className="contact-form-wrapper">
         <div className="contact-form__text">
           <h4>Lorem ipsum dolor sit amet consectetur</h4>

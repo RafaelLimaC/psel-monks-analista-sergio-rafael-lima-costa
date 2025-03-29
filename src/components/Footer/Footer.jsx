@@ -11,16 +11,16 @@ function Footer() {
       <nav>
         <ul className="footer-socials">
           <li>
-            <img src={instagram} alt="" />
+            <img src={instagram} alt="Instagram" />
           </li>
           <li>
-            <img src={whatsapp} alt="" />
+            <img src={whatsapp} alt="Whatsapp" />
           </li>
           <li>
-            <img src={twitter} alt="" />
+            <img src={twitter} alt="Twitter" />
           </li>
           <li>
-            <img src={facebook} alt="" />
+            <img src={facebook} alt="Facebook" />
           </li>
         </ul>
       </nav>

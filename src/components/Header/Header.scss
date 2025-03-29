@@ -137,6 +137,8 @@ header {
   width: max-content;
   padding: 0.25rem;
 
+  cursor: pointer;
+
   @include breakpoints.header {
     display: none;
   }

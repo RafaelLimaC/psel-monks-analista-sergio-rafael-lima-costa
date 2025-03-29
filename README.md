@@ -20,8 +20,9 @@ melhorar a experiência do usuário.
 
 Se você não quiser baixar e configurar o projeto localmente, tudo está hospedado online!
 
-- **Frontend**: Acesse [https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/](https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/)
+- **Frontend**: React - acesse [https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/](https://psel-monks-analista-sergio-rafael-lima-costa.vercel.app/)
 - **Backend**: Instância do WordPress hospedada na Hostinger, acesse aqui: [link](https://linen-horse-773831.hostingersite.com/wp-json/wp/v2/).
+- **Banco de Dados**: MySQL (WordPress)
 
 ## Tecnologias Utilizadas
 
