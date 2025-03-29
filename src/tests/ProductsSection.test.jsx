@@ -49,7 +49,7 @@ describe("ProductsSection component", () => {
     );
   });
 
-  it("should handle API errors gracefully", () => {
+  it("should handle API errors", () => {
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});

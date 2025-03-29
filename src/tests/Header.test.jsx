@@ -38,7 +38,7 @@ describe("Header component", () => {
     expect(screen.getAllByText("Category 3")).toHaveLength(2);
   });
 
-  it("handle API errors gracefully", () => {
+  it("handle API errors", () => {
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});

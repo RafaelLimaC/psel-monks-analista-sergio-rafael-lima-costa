@@ -37,7 +37,7 @@ describe("CardsSection component", () => {
     expect(screen.getByText("Button 2")).toBeInTheDocument();
   });
 
-  it("handle API errors gracefully", () => {
+  it("handle API errors", () => {
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});
