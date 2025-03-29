@@ -1,4 +1,4 @@
-const BASE_URL = "https://linen-horse-773831.hostingersite.com/wp-json";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 /**
  * @param {string} endpoint
