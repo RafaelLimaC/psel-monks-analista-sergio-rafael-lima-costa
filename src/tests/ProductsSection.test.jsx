@@ -12,7 +12,7 @@ describe("ProductsSection component", () => {
     vi.clearAllMocks();
   });
 
-  it("should render products fetched from the API", () => {
+  it("renders products fetched from the API", () => {
     const mockProducts = [
       {
         title: { rendered: "Product 1" },
@@ -49,7 +49,7 @@ describe("ProductsSection component", () => {
     );
   });
 
-  it("should handle API errors", () => {
+  it("handle API errors", () => {
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});
@@ -64,7 +64,7 @@ describe("ProductsSection component", () => {
     consoleErrorSpy.mockRestore();
   });
 
-  it("should render fallback content when product data is missing", () => {
+  it("renders fallback content when product data is missing", () => {
     const mockProducts = [
       {
         title: null,

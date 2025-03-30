@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Card from "@/components/CardsSection/Card.jsx";
 
 describe("Card component", () => {
-  it("render without crashing", () => {
+  it("renders without crashing", () => {
     render(
       <Card
         title="Test Title"
@@ -21,7 +21,7 @@ describe("Card component", () => {
     expect(button).toBeInTheDocument();
   });
 
-  it("render fallback content when card data is missing", () => {
+  it("renders fallback content when card data is missing", () => {
     render(<Card title={null} content={null} buttonText={null} />);
 
     const title = screen.queryByText(/Test Title/i);

@@ -12,7 +12,7 @@ describe("CardsSection component", () => {
     vi.clearAllMocks();
   });
 
-  it("render cards fetched from the API", () => {
+  it("renders cards fetched from the API", () => {
     const mockCards = [
       {
         title: { rendered: "Card 1" },
@@ -52,7 +52,7 @@ describe("CardsSection component", () => {
     consoleErrorSpy.mockRestore();
   });
 
-  it("render fallback content when card data is missing", () => {
+  it("renders fallback content when card data is missing", () => {
     const mockCards = [
       {
         title: null,

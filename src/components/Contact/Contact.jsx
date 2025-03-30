@@ -22,8 +22,8 @@ function Contact() {
   const { submitForm } = useContactForm();
 
   const generateRandomNumbers = () => {
-    setNum1(Math.floor(Math.random() * 900) + 100);
-    setNum2(Math.floor(Math.random() * 900) + 100);
+    setNum1(Math.floor(Math.random() * 400) + 100);
+    setNum2(Math.floor(Math.random() * 400) + 100);
   };
 
   useEffect(() => {

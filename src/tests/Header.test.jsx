@@ -12,7 +12,7 @@ describe("Header component", () => {
     vi.clearAllMocks();
     useNavigation.mockReturnValue({ categories: [], error: null });
   }, []);
-  it("render without crashing", () => {
+  it("renders without crashing", () => {
     render(<Header />);
 
     const logo = screen.getByAltText("Monks Logo");
@@ -21,7 +21,7 @@ describe("Header component", () => {
     expect(logo).toHaveAttribute("alt", "Monks Logo");
   });
 
-  it("display categories fetched from the API on both menus", async () => {
+  it("displays categories fetched from the API on both menus", async () => {
     const mockCategories = [
       { title: { rendered: "Category 1" }, acf: { href: "/category-1" } },
       { title: { rendered: "Category 2" }, acf: { href: "/category-2" } },
@@ -68,7 +68,7 @@ describe("Header component", () => {
     expect(checkbox).not.toBeChecked();
   });
 
-  it("close the mobile menu when a category link is clicked", async () => {
+  it("closes the mobile menu when a category link is clicked", async () => {
     const mockCategories = [
       { title: { rendered: "Category 1" }, acf: { href: "/category-1" } },
       { title: { rendered: "Category 2" }, acf: { href: "/category-2" } },
