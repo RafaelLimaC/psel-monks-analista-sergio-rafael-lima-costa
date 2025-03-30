@@ -3,7 +3,6 @@ import { describe, it, expect, vi } from "vitest";
 import Gallery from "../components/GallerySection/GallerySection";
 import { useGalleries } from "@/hooks/useGalleries";
 
-// Mock the useGalleries hook
 vi.mock("@/hooks/useGalleries");
 
 describe("GallerySection Component", () => {
@@ -85,7 +84,7 @@ describe("GallerySection Component", () => {
     );
   });
 
-  it("handles errors gracefully", () => {
+  it("handles errors", () => {
     const consoleErrorSpy = vi
       .spyOn(console, "error")
       .mockImplementation(() => {});
